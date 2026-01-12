@@ -7,16 +7,12 @@ class Customer:
     def __init__(self, first_name, family_name, age):
         self.first_name = first_name
         self.family_name = family_name
-        self.age = age
+        self.age = age  # C-2. 年齢という概念を取得できる
 
     # メソッド
     # C-1. フルネームを取得できる
     def full_name(self):
         return self.first_name + " " + self.family_name
-
-    # C-2. 年齢という概念を取得できる
-    def age(self):
-        return self.age
 
     # C-3. 年齢に応じた適切な入場料(entry_fee)を計算できる
     def entry_fee(self):
@@ -32,13 +28,19 @@ class Customer:
             return 500
 
     # C-4. 単一の顧客情報をCSV形式で取得できる
-    def info_csv(self):
+    # def info_csv(self):
         # return self.full_name + "," + str(self.age) + "," + str(self.entry_fee())
-        # C-7. 単一顧客の情報取得形式の追加その1
+        # return f"{str(self.full_name())},{str(self.age)},{str(self.entry_fee())}"
+
+    # # C-7. 単一顧客の情報取得形式の追加その1
+    # def info_csv(self):
         # return self.full_name + "\t" + str(self.age) + "\t" + str(self.entry_fee())
-        # C-8. 単一顧客の情報取得形式の追加その2
-        # return self.full_name + "|" + str(self.age) + "|" + str(self.entry_fee())
-        return str(self.full_name()) + "|" + str(self.age) + "|" + str(self.entry_fee())
+        # return f"{str(self.full_name())}\t{str(self.age)}\t{str(self.entry_fee())}"
+
+    # # C-8. 単一顧客の情報取得形式の追加その2
+    def info_csv(self):
+        # return str(self.full_name()) + "|" + str(self.age) + "|" + str(self.entry_fee())
+        return f"{str(self.full_name())}|{str(self.age)}|{str(self.entry_fee())}"
 
 
 ken = Customer(first_name="Ken", family_name="Tanaka", age=15)
