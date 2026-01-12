@@ -28,17 +28,17 @@ class Customer:
             return 500
 
     # C-4. 単一の顧客情報をCSV形式で取得できる
-    # def info_csv(self):
+    def info_csv(self):
         # return self.full_name + "," + str(self.age) + "," + str(self.entry_fee())
-        # return f"{str(self.full_name())},{str(self.age)},{str(self.entry_fee())}"
+        return f"{str(self.full_name())},{str(self.age)},{str(self.entry_fee())}"
 
     # # C-7. 単一顧客の情報取得形式の追加その1
-    # def info_csv(self):
+    def info_tsv(self):
         # return self.full_name + "\t" + str(self.age) + "\t" + str(self.entry_fee())
-        # return f"{str(self.full_name())}\t{str(self.age)}\t{str(self.entry_fee())}"
+        return f"{str(self.full_name())}\t{str(self.age)}\t{str(self.entry_fee())}"
 
     # # C-8. 単一顧客の情報取得形式の追加その2
-    def info_csv(self):
+    def info_psv(self):
         # return str(self.full_name()) + "|" + str(self.age) + "|" + str(self.entry_fee())
         return f"{str(self.full_name())}|{str(self.age)}|{str(self.entry_fee())}"
 
@@ -71,7 +71,12 @@ print(tom.entry_fee())  # 1500 という値を出力
 print(ieyasu.entry_fee())  # 1200 という値を出力
 print(michelle.entry_fee())  # 0 という値を出力
 
-print(ken.info_csv())  # "Ken Tanaka,15,1000" という値を出力
-print(tom.info_csv())  # "Tom Ford,57,1500" という値を出力
-print(ieyasu.info_csv())  # "Ieyasu Tokugawa,75,1200" という値を出力
-print(michelle.info_csv())
+print(ken.info_tsv())  # "Ken Tanaka,15,1000" という値を出力
+print(tom.info_tsv())  # "Tom Ford,57,1500" という値を出力
+print(ieyasu.info_tsv())  # "Ieyasu Tokugawa,75,1200" という値を出力
+print(michelle.info_tsv())
+
+print(ken.info_psv())  # "Ken Tanaka,15,1000" という値を出力
+print(tom.info_psv())  # "Tom Ford,57,1500" という値を出力
+print(ieyasu.info_psv())  # "Ieyasu Tokugawa,75,1200" という値を出力
+print(michelle.info_psv())
